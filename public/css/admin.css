@@ -1,0 +1,14 @@
+body{
+    margin: 100px;
+}
+
+li{
+    list-style: none;
+}
+
+.products-item{
+    border: solid black 3px;
+    margin-bottom: 2px;
+    padding: 10px;
+    height: 80px;
+}

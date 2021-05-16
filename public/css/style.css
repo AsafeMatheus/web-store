@@ -1,0 +1,143 @@
+body{
+    background-color: #363f42;
+    color: white;
+}
+
+img{
+    width: 100px;
+}
+
+hr{
+    margin: 0px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+i{
+    margin-right: 5px;
+}
+span{
+    color: rgb(252, 0, 0);
+}
+
+/*       navbar    */
+.navbar{
+    background-color: #d87ebd;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}
+
+ul{
+    align-items: center;
+}
+
+.seak-black{
+    background-color: rgba(0, 0, 0, 0.486);
+    padding: 6px 40px 6px 40px;
+}
+.navbar-nav .nav-link {
+    padding: 5px 10px 5px 10px;
+}
+
+.main-nav{
+    background-color: rgb(138, 177, 228);
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: solid white;
+    border-width: 2px;
+}
+
+.navbar-nav{
+    flex-direction: row;
+}
+
+.nav-item{
+    margin: 5px 10px 5px 10px;
+}
+
+.item-hover:hover{
+    background-color: white;
+}
+/*      header    */
+#header{
+    margin-top: 64px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 200px;
+    background-color: #df7dd0;
+    background: linear-gradient(-45deg, #ee52a0, #5e3b48, #363f42, #151616);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.header-title{
+    color: #d87ebd;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 100px;
+}
+
+.about{
+    padding: 30px 60px 30px 60px;
+}
+
+.products{
+    color: black;
+    margin: 15px;
+}
+
+.col{
+    padding: 15px;
+}
+.card{
+    padding: 5px;
+    margin: 40px;
+}
+
+.skill-row{
+    margin-bottom: 100px;
+    margin-top: 100px;
+    line-height: 2;
+    text-align: left;
+}
+.code-img{
+    float: left;
+    margin-right: 30px;
+}
+
+.feedback{
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #d87ebd;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#order{
+    padding-bottom: 40px;
+}
+
+.block{
+    display: block;
+    margin: 5px 0px;
+    width: 40%;
+}
+
+.btn-greater{
+    width: 10%;
+}

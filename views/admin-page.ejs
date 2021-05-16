@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body style="background-color: white; color: black;">
+    <h1>Admin area</h1>
+    <hr>
+    <h2>Products</h2>
+    <div class="row">
+        <div class="col-sm">
+            <h3>add a new product</h3>
+            <form action="/compose" method="POST" class="little-form">
+                <div class="mb-3">
+                    <label for="newProductName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="newProductName" name="newProductName" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="newProductPrice" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="newProductPrice" name="newProductPrice" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="newProductStock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="newProductStock" name="newProductStock" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="newProductDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="newProductDescription" rows="5" name="newProductDescription"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="newProductImage" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="newProductImage" name="newProductImage" placeholder="please. put a link" autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+        <div class="col-sm">
+            <h3>delete</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">del</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">stock</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% allProducts.forEach((content) => { %>
+                        <form action="/delete" method="POST">
+                            <tr name="itemToDelete">
+                                <td>
+                                    <input type="checkbox" name="itemToDelete" value=<%= content._id %> id="itemToDelete" onchange="this.form.submit()">
+                                </td>
+                                <td><%= content.name %></td>
+                                <td>R$ <%= content.price %>.00</td>
+                                <td><%= content.stock %></td>
+                            </tr>
+                        </form>
+                    <% }) %>
+                    
+                  </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+    <h3>Orders</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">del</th>
+                <th scope="col">Date</th>
+                <th scope="col">Email</th>
+                <th scope="col">Price</th>
+                <th scope="col">City</th>
+                <th scope="col">Street</th>
+                <th scope="col">House</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% allOrders.forEach((content) => { %>
+                <form action="/delete-order" method="POST">
+                    <tr name="itemToDelete">
+                        <td>
+                            <input type="checkbox" name="orderToDelete" value=<%= content._id %> id="orderToDelete" onchange="this.form.submit()">
+                        </td>
+                        <td><%= content.date %></td>
+                        <td><%= content.email %></td>
+                        <td>R$ <%= content.money %>.00</td>
+                        <td><%= content.city %></td>
+                        <td><%= content.street %></td>
+                        <td><%= content.houseNumber %></td>
+                        <td><%= content.amount %></td>
+                    </tr>
+                </form>
+            <% }) %>
+            
+        </tbody>
+    </table>
+
+</body>
+</html>
